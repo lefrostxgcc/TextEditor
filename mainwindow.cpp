@@ -35,3 +35,8 @@ void MainWindow::on_buttonOpenFile_clicked()
 
     ui->fileContent->setPlainText(QTextStream{&file}.readAll());
 }
+
+void MainWindow::on_buttonSaveFile_clicked()
+{
+
+}
