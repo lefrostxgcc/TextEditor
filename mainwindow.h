@@ -18,6 +18,7 @@ public:
 public slots:
     void on_buttonOpenFile_clicked();
     void on_buttonSaveFile_clicked();
+    void on_buttonReplace_clicked();
 
 private:
     Ui::MainWindow *ui;

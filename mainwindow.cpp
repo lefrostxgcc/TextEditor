@@ -54,3 +54,18 @@ void MainWindow::on_buttonSaveFile_clicked()
 
     QTextStream(&file) << ui->fileContent->toPlainText();
 }
+
+void MainWindow::on_buttonReplace_clicked()
+{
+    const QString searchText  {ui->searchPattern->text()};
+    const QString replaceText {ui->replacingText->text()};
+
+    constexpr QTextDocument::FindFlags flags {QTextDocument::FindCaseSensitively | QTextDocument::FindWholeWords};
+
+    QTextCursor cursor;
+    cursor.setPosition(0);
+    ui->fileContent->setTextCursor(cursor);
+
+    while (ui->fileContent->find(searchText, flags))
+        ui->fileContent->insertPlainText(replaceText);
+}
