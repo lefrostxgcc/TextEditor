@@ -38,5 +38,19 @@ void MainWindow::on_buttonOpenFile_clicked()
 
 void MainWindow::on_buttonSaveFile_clicked()
 {
+    QString filename = QFileDialog::getSaveFileName();
 
+    if (filename.isEmpty())
+        return;
+
+    QFile file{filename};
+    file.open(QIODevice::WriteOnly);
+
+    if (!file.isOpen())
+    {
+        QMessageBox::warning(nullptr, "Ошибка", "Ошибка сохранения файла " + filename);
+        return;
+    }
+
+    QTextStream(&file) << ui->fileContent->toPlainText();
 }
