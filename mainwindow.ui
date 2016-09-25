@@ -48,8 +48,16 @@
     </item>
     <item row="1" column="0" colspan="5">
      <widget class="QPlainTextEdit" name="fileContent">
+      <property name="font">
+       <font>
+        <family>Monospace</family>
+       </font>
+      </property>
       <property name="lineWrapMode">
        <enum>QPlainTextEdit::NoWrap</enum>
+      </property>
+      <property name="tabStopWidth">
+       <number>40</number>
       </property>
      </widget>
     </item>
